@@ -1,0 +1,552 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WanderStories Blog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 1.8rem; }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff9900;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1200x400/?travel,nature') no-repeat center center/cover;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero h2 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; margin-top: 10px; }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 40px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .post {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .post:hover {
+      transform: translateY(-5px);
+    }
+    .post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 15px;
+    }
+    .post-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #004080;
+    }
+    .post-content p {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+    .post-content .date {
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sidebar section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .sidebar input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .sidebar h4 {
+      margin-bottom: 10px;
+      color: #004080;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar ul li {
+      margin-bottom: 8px;
+    }
+    .sidebar a:hover {
+      color: #ff9900;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffcc00;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>WanderStories</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Tips</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Adventure Awaits</h2>
+    <p>Discover the world one story at a time</p>
+  </section>
+
+  <div class="main-content">
+    <div class="posts">
+    
+      <div class="post">
+        <img src="1.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Exploring the Rockies</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">August 7, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="2.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Sunsets in Bali</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">August 5, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="3.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Nature Walks in Oregon</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">August 2, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="4.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Urban Exploration in Tokyo</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">August 1, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="5.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Desert Safari in Dubai</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">July 29, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="6.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Island Hopping in Greece</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">July 25, 2025</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <section>
+        <h4>Search</h4>
+        <input type="text" placeholder="Search posts...">
+      </section>
+      <section>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Lifestyle</a></li>
+          <li><a href="#">Food</a></li>
+          <li><a href="#">Photography</a></li>
+        </ul>
+      </section>
+      <section>
+        <h4>Recent Posts</h4>
+        <ul>
+          <li><a href="#">Top 10 Beaches to Visit</a></li>
+          <li><a href="#">Packing Tips for Europe</a></li>
+          <li><a href="#">The Joy of Solo Travel</a></li>
+        </ul>
+      </section>
+      <section>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 WanderStories. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
+  </footer>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WanderStories Blog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; color: inherit; }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 1.8rem; }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff9900;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1200x400/?travel,nature') no-repeat center center/cover;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero h2 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; margin-top: 10px; }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 40px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .post {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .post:hover {
+      transform: translateY(-5px);
+    }
+    .post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 15px;
+    }
+    .post-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #004080;
+    }
+    .post-content p {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+    .post-content .date {
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sidebar section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .sidebar input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .sidebar h4 {
+      margin-bottom: 10px;
+      color: #004080;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar ul li {
+      margin-bottom: 8px;
+    }
+    .sidebar a:hover {
+      color: #ff9900;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+    section h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+    section p {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffcc00;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>WanderStories</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#tips">Tips</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Adventure Awaits</h2>
+    <p>Discover the world one story at a time</p>
+  </section>
+
+  <div class="main-content">
+    <div class="posts">
+      <div class="post">
+        <img src="1.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Exploring the Rockies</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">August 7, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="2.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Sunsets in Bali</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">August 5, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="3.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Nature Walks in Oregon</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">August 2, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="4.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Urban Exploration in Tokyo</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">August 1, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="5.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Desert Safari in Dubai</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">July 29, 2025</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="6.jpg" alt="Blog Thumbnail">
+        <div class="post-content">
+          <h3>Island Hopping in Greece</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="date">July 25, 2025</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <section>
+        <h4>Search</h4>
+        <input type="text" placeholder="Search posts...">
+      </section>
+      <section>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Lifestyle</a></li>
+          <li><a href="#">Food</a></li>
+          <li><a href="#">Photography</a></li>
+        </ul>
+      </section>
+      <section>
+        <h4>Recent Posts</h4>
+        <ul>
+          <li><a href="#">Top 10 Beaches to Visit</a></li>
+          <li><a href="#">Packing Tips for Europe</a></li>
+          <li><a href="#">The Joy of Solo Travel</a></li>
+        </ul>
+      </section>
+      <section>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <section id="destinations" style="background: #f5f5f5;">
+    <h2>Popular Destinations</h2>
+    <p>Explore the most visited travel spots curated by our experienced explorers — from snowy peaks to sunny coasts.</p>
+  </section>
+
+  <section id="tips">
+    <h2>Travel Tips</h2>
+    <p>Get the best advice on how to plan your journey, pack smartly, and stay safe wherever you go.</p>
+  </section>
+
+  <section id="about" style="background: #f5f5f5;">
+    <h2>About Us</h2>
+    <p>WanderStories is a passion project built by travelers for travelers. Our mission is to inspire and inform the next generation of global wanderers.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 WanderStories. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
+  </footer>
+
+</body>
+</html>
